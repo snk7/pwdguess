@@ -53,7 +53,8 @@ def check(user, passwd):
     try:
         auth = g_conn.admin.authenticate(user, passwd, mechanism=g_authMechanism)   #crack user within admin database
         return True
-    except mongoErr.OperationFailure:
+    except:
+    #mongoErr.OperationFailure or something like mongoErr.ConfigurationError: mechanism must be in frozenset(['PLAIN', 'MONGODB-CR', 'GSSAPI', 'MONGODB-X509'])
         return False
 
 def get_pass_pair():
