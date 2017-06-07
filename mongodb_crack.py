@@ -83,5 +83,7 @@ if __name__ == "__main__":
             passwd = pair['passwd']
             if check(user, passwd):
                 print "[+] > Valid MongoDB user/password: [%s:%s], port: [%s]" % (user, passwd, port)
+                #pymongo.errors.OperationFailure: Another user is already authenticated to this database. You must logout first.
+                g_conn.admin.logout()
             else:
                 print "[-] Invalid MongoDB user/password: [%s:%s], port: [%s]" % (user, passwd, port)
