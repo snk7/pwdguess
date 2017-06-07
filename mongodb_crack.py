@@ -2,6 +2,7 @@
 # coding: utf-8 
 
 #require pymongo installed
+#pymongo.version must > = mongoDB db.version()
 
 #running example:
 #[-] Strart cracking MongoDB server: [192.168.1.23]
